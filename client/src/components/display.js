@@ -3,18 +3,25 @@ import './bootstrap.min.css';
 import { Table } from 'react-bootstrap';
 const axios = require('axios');
 
-function Display() {
+function Display({ updateSubmitted, submitted }) {
   const [userList, setUserList] = useState([]);
 
   const apiCall = () => {
     axios.get('/api').then((response) => {
       setUserList(response.data);
+      updateSubmitted();
     });
   };
 
   useEffect(() => {
     apiCall();
   }, []);
+
+  useEffect(() => {
+    if (submitted) {
+      apiCall();
+    }
+  }, [submitted]);
   return (
     <div>
       <Table striped bordered hover>
