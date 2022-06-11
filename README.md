@@ -1,2 +1,2 @@
-# potluckParty
+# potluckparty
 Potluck organizer
