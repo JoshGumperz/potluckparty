@@ -1,0 +1,27 @@
+{
+  "name": "potluckparty",
+  "version": "1.0.0",
+  "description": "Potluck organizer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JessGiannini/potluckparty.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JessGiannini/potluckparty/issues"
+  },
+  "homepage": "https://github.com/JessGiannini/potluckparty#readme",
+  "dependencies": {
+    "concurrently": "^7.2.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.6",
+    "nodemon": "^2.0.16"
+  }
+}
