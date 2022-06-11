@@ -1,0 +1,11 @@
+.form-button {
+    background-color: rgba(0, 0, 255, 0.329);
+}
+
+.form-button-inactive {
+    background-color: rgba(255, 0, 0, 0.348);
+}
+
+.form-button-active {
+    background-color: rgba(0, 128, 0, 0.451);
+}

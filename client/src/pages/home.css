@@ -1,0 +1,30 @@
+.flyer-box {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+    justify-content: center;
+}
+
+h1 {
+    margin: auto;
+    font-size: 100px;
+}
+
+.flyer-info {
+    padding: 50px;
+    margin: 20px;
+    font-size: xx-large;
+}
+
+.button-attending {
+    margin: auto;
+    background: rgba(0, 128, 0, 0.382);
+    font-size: 40px;
+    padding: 10px 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40%
+}

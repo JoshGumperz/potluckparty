@@ -13,6 +13,6 @@ mongoose.connect(process.env.MONGODB_URI)
     .then(() => { console.log("connection good") })
     .catch((error) => { console.log(error) })
 
-app.use(require("./routes/routes"))
+app.use('/api', require("./routes/routes"))
 
 app.listen(PORT, () => { console.log(`Backend server now running on port http://localhost:${PORT}`) })
