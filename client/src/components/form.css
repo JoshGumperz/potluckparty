@@ -34,9 +34,8 @@
     height: 50px;
 }
 
-.form-submit-btn {
+.form-submit-btn, .form-cancel-btn {
     transition: 0.3s ease-in-out;
-    background-color: #000;
     color: #fff;
     border: none;
     outline: none;
@@ -52,7 +51,16 @@
     cursor: pointer;
 }
 
-.form-submit-btn::before {
+.form-submit-btn {
+    background-color: #000;
+    margin-right: 0.2em;
+}
+
+.form-cancel-btn {
+    background-color: rgb(101, 130, 167);
+}
+
+.form-submit-btn::before, .form-cancel-btn::before {
     content: '';
     position: absolute;
     top: 0;
@@ -61,17 +69,28 @@
     right: 0;
     z-index: -1;
     background-color: #ffff;
-    border: 1px solid #000;
     border-radius: 3px;
     transition: 0.3s ease-in-out;
     transform: scaleY(0);
     transform-origin: bottom;
 }
 
+.form-submit-btn::before {
+    border: 1px solid #000;
+}
+
+.form-cancel-btn::before {
+    border: 1px solid rgb(101, 130, 167);
+}
+
 .form-submit-btn:hover {
     color: #000;
 }
 
-.form-submit-btn:hover::before { 
+.form-cancel-btn:hover {
+    color: rgb(101, 130, 167);
+}
+
+.form-submit-btn:hover::before, .form-cancel-btn:hover::before { 
     transform: scaleY(1);
 }

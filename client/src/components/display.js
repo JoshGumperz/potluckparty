@@ -46,6 +46,7 @@ function Display({ updateSubmitted, submitted }) {
 
   useEffect(() => {
     if (submitted) {
+      setIconClicked(false)
       apiCall();
     }
   }, [submitted]);
@@ -69,7 +70,7 @@ function Display({ updateSubmitted, submitted }) {
                 {item._id === userId ? <td width={"1%"}><Icon onClick={() => {setIconClicked(!iconClicked)}} className='display-icon'/></td> : null}
                 {iconClicked && item._id === userId ?
                   <aside className='display-popup-menu-container'>
-                    <PopupMenu closeDropdown={closeDropdown}/>
+                    <PopupMenu closeDropdown={closeDropdown} updateSubmitted={updateSubmitted}/>
                   </aside> : null}
               </tr>
             );

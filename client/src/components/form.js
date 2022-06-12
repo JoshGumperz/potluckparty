@@ -1,15 +1,23 @@
 import { useState, useEffect } from 'react';
 import menuForm from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'react-dropdown/style.css';
 import './form.css';
 
-function Form({ updateSubmitted }) {
+function Form({ updateSubmitted, postOrPut }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [dish, setDish] = useState('');
   const [invalidInput, setInvalidInput] = useState(false)
   const [categorySelected, setCategorySelected] = useState('');
+  const navigate = useNavigate();
+
+  const getUserId = () => {
+    return localStorage.getItem('userId');
+  }
+
+  const userId = getUserId()
 
   const validateInput = () => {
     if(!name || !email || !dish || !categorySelected || categorySelected === 'Select An Option') {
@@ -39,19 +47,15 @@ function Form({ updateSubmitted }) {
     } 
   }, [categorySelected])
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const validInput = validateInput();
-    if(!validInput) {
-      return 
-    }
+  const apiCall = async (method) => {
     let bodyToSend = {
       name: name,
       email: email,
       dish: { name: dish, category: categorySelected },
     };
-    const response = await fetch('/api', {
-      method: 'POST',
+    const url = postOrPut === 'post' ? '/api' : `/api/${userId}`
+    const response = await fetch(url, {
+      method: method,
       body: JSON.stringify(bodyToSend),
       headers: { 'Content-Type': 'application/json' },
     });
@@ -59,7 +63,23 @@ function Form({ updateSubmitted }) {
       const data = await response.json();
       updateSubmitted();
       localStorage.setItem('userId', data._id);
+      if(postOrPut === 'put') {
+        navigate('/attending');
+      }
       console.log(data);
+    }
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validInput = validateInput();
+    if(!validInput) {
+      return 
+    }
+    if(postOrPut === 'post') {
+      apiCall('POST');
+    } else if (postOrPut === 'put') {
+      apiCall('PUT');
     }
   };
   return (
@@ -126,6 +146,7 @@ function Form({ updateSubmitted }) {
         </div>
         <div className='form-button-container'>
           <button className={"form-submit-btn"}>submit</button>
+          {postOrPut === 'put' ? <button className={"form-cancel-btn"} onClick={() => {navigate('/attending');}}>cancel</button> : null }
         </div>
     </form>
   );
