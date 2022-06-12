@@ -1,0 +1,32 @@
+.popup-container {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.popup-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80px;
+}
+
+.popup-list-item, .popup-option {
+    cursor: pointer;
+}
+
+.popup-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.popup-list-item:hover {
+    background-color: rgb(210, 210, 210);
+}

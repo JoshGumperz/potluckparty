@@ -2,10 +2,34 @@ import React, { useEffect, useState } from 'react';
 import './bootstrap.min.css';
 import './display.css';
 import { Table } from 'react-bootstrap';
+import PopupMenu from './popupMenu';
+import { HiOutlineDotsVertical as Icon } from 'react-icons/hi'
+
 const axios = require('axios');
 
 function Display({ updateSubmitted, submitted }) {
   const [userList, setUserList] = useState([]);
+  const [count, setCount] = useState(0)
+  const [iconClicked, setIconClicked] = useState(false)
+
+  const closeDropdown = () => {
+    if(count >= 1) {
+      setIconClicked(false)
+    }
+    setCount(count + 1)
+  }
+  
+  useEffect(() => {
+    if(!iconClicked) {
+      setCount(0)
+    }
+  }, [iconClicked])
+
+  const getUserId = () => {
+    return localStorage.getItem('userId');
+  }
+
+  const userId = getUserId()
 
   const apiCall = () => {
     axios.get('/api').then((response) => {
@@ -35,13 +59,18 @@ function Display({ updateSubmitted, submitted }) {
             <th>item</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='display-table-body'>
           {userList.map((item) => {
             return (
-              <tr key={item._id}>
+              <tr className={'display-table-row'} key={item._id}>
                 <td>{item.name}</td>
                 <td>{item.dish.category}</td>
                 <td>{item.dish.name}</td>
+                {item._id === userId ? <td width={"1%"}><Icon onClick={() => {setIconClicked(!iconClicked)}} className='display-icon'/></td> : null}
+                {iconClicked && item._id === userId ?
+                  <aside className='display-popup-menu-container'>
+                    <PopupMenu closeDropdown={closeDropdown}/>
+                  </aside> : null}
               </tr>
             );
           })}

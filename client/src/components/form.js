@@ -58,6 +58,7 @@ function Form({ updateSubmitted }) {
     if (response.ok) {
       const data = await response.json();
       updateSubmitted();
+      localStorage.setItem('userId', data._id);
       console.log(data);
     }
   };
