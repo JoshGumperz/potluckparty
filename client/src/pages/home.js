@@ -13,7 +13,7 @@ function Home() {
       <button
         className='button-attending'
         onClick={() => {
-          navigate('/test');
+          navigate('/attending');
         }}
       >
         Attending

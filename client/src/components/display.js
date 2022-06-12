@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './bootstrap.min.css';
+import './display.css';
 import { Table } from 'react-bootstrap';
 const axios = require('axios');
 
@@ -9,7 +10,9 @@ function Display({ updateSubmitted, submitted }) {
   const apiCall = () => {
     axios.get('/api').then((response) => {
       setUserList(response.data);
-      updateSubmitted();
+      if (submitted) {
+        updateSubmitted();
+      }
     });
   };
 
@@ -23,13 +26,13 @@ function Display({ updateSubmitted, submitted }) {
     }
   }, [submitted]);
   return (
-    <div>
+    <div className='display-table-container'>
       <Table striped bordered hover>
         <thead>
           <tr>
             <th>Name</th>
-            <th>Dish Type</th>
-            <th>Dish</th>
+            <th>Item Type</th>
+            <th>item</th>
           </tr>
         </thead>
         <tbody>

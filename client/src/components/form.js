@@ -8,7 +8,16 @@ function Form({ updateSubmitted }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [dish, setDish] = useState('');
+  const [invalidInput, setInvalidInput] = useState(false)
   const [categorySelected, setCategorySelected] = useState('');
+
+  const validateInput = () => {
+    if(!name || !email || !dish || !categorySelected || categorySelected === 'Select An Option') {
+      setInvalidInput(true)
+      return false
+    }
+    return true
+  }
 
   const saveInput = (e) => {
     if (e.target.name === 'name') {
@@ -24,8 +33,18 @@ function Form({ updateSubmitted }) {
     setCategorySelected(e.target.value);
   };
 
+  useEffect(() => {
+    if(invalidInput) {
+      setInvalidInput(false)
+    } 
+  }, [categorySelected])
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const validInput = validateInput();
+    if(!validInput) {
+      return 
+    }
     let bodyToSend = {
       name: name,
       email: email,
@@ -43,9 +62,11 @@ function Form({ updateSubmitted }) {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Form</h3>
-      <Container>
+    <form onSubmit={handleSubmit} className={"form-container"}>
+        <div className='form-header-container'>
+          <h3 className='form-header'>Form</h3>
+        </div>
+        { invalidInput ? <div className='form-error-message-container'><p className='form-error-message'>Invalid Input. Please Fill Out All The Fields.</p></div> : null }
         <div className='form-label-container'>
           <label className='form-label'>
             Name<span className='log-in-lable-star '>*</span>
@@ -56,6 +77,7 @@ function Form({ updateSubmitted }) {
             type='text'
             name='name'
             value={name}
+            required={true}
           ></input>
         </div>
         <div className='form-label-container'>
@@ -68,14 +90,19 @@ function Form({ updateSubmitted }) {
             type='email'
             name='email'
             value={email}
+            required={true}
           ></input>
         </div>
-        <div className='form-label-container'>
+        <div className='form-dropdown-container form-label-container'>
+          <label className='form-label'>
+            Item Type<span className='log-in-lable-star '>*</span>
+          </label>
           <menuForm.Select
             onChange={onChangeDropDown}
             aria-label='Default select example'
+            className='form-dropdown-menu form-input'
           >
-            <option>I will bring...</option>
+            <option>Select An Option</option>
             <option value='Appetizer'>Appetizer</option>
             <option value='Entre'>Entre</option>
             <option value='Dessert'>Dessert</option>
@@ -85,7 +112,7 @@ function Form({ updateSubmitted }) {
         </div>
         <div className='form-label-container'>
           <label className='form-label'>
-            Dish<span className='log-in-lable-star '>*</span>
+            Item<span className='log-in-lable-star '>*</span>
           </label>
           <input
             className='form-input'
@@ -93,11 +120,12 @@ function Form({ updateSubmitted }) {
             type='text'
             name='dish'
             value={dish}
+            required={true}
           ></input>
         </div>
-
-        <button>Sumbit</button>
-      </Container>
+        <div className='form-button-container'>
+          <button className={"form-submit-btn"}>submit</button>
+        </div>
     </form>
   );
 }
