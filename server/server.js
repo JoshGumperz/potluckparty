@@ -9,7 +9,11 @@ app.use(express.json())
 const PORT = process.env.PORT || 3001
 dotenv.config();
 
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+
     .then(() => { console.log("connection good") })
     .catch((error) => { console.log(error) })
 
