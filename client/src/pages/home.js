@@ -4,7 +4,7 @@ function Home() {
   const navigate = useNavigate();
   return (
     <div className='flyer-box'>
-      <h1>Alumni Potluck Party!</h1>
+      <h1 className="header-flyer">Alumni Potluck Party!</h1>
       <div className='flyer-info'>
         <p>Date: July 9, 2022</p>
         <p>Location: Lake Elizabeth 1 Sailway Dr, Fremont, CA 94538</p>

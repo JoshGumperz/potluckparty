@@ -6,6 +6,10 @@
     width: 100%;
 }
 
+.potluck-header-container {
+    width: 100%;
+}
+
 .potluck-form-container {
     margin: 0 0.5em 0 0.5em;
     width: 35%;
@@ -21,4 +25,65 @@
     text-align: center;
     margin-top: 4em;
     margin-bottom: 0;
+}
+
+@media screen and (max-width: 1420px) {
+    .potluck-form-container {
+        width: 40%;
+    }
+
+    .potluck-display-container {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .potluck-form-container {
+        width: 45%;
+    }
+
+    .potluck-display-container {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .potluck-form-container {
+        width: 50%;
+    }
+
+    .potluck-display-container {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .potluck-container {
+        flex-direction: column;
+    }
+
+    .potluck-header-container {
+        width: 75%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .potluck-form-container {
+        width: 75%;
+    }
+
+    .potluck-display-container {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .potluck-form-container {
+        width: 95%;
+    }
+
+    .potluck-display-container {
+        width: 95%;
+    }
 }

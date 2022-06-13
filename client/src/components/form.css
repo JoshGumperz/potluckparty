@@ -8,7 +8,9 @@
     height: 450px;
 }
 
-.form-header-container, .form-button-container, .form-error-message-container  {
+.form-header-container,
+.form-button-container,
+.form-error-message-container {
     width: 100%;
     margin-left: 5%;
 }
@@ -34,7 +36,8 @@
     height: 50px;
 }
 
-.form-submit-btn, .form-cancel-btn {
+.form-submit-btn,
+.form-cancel-btn {
     transition: 0.3s ease-in-out;
     color: #fff;
     border: none;
@@ -60,7 +63,8 @@
     background-color: rgb(101, 130, 167);
 }
 
-.form-submit-btn::before, .form-cancel-btn::before {
+.form-submit-btn::before,
+.form-cancel-btn::before {
     content: '';
     position: absolute;
     top: 0;
@@ -91,6 +95,7 @@
     color: rgb(101, 130, 167);
 }
 
-.form-submit-btn:hover::before, .form-cancel-btn:hover::before { 
+.form-submit-btn:hover::before,
+.form-cancel-btn:hover::before {
     transform: scaleY(1);
 }

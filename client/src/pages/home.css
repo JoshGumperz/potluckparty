@@ -8,9 +8,9 @@
     justify-content: center;
 }
 
-h1 {
+.header-flyer {
     margin: auto;
-    font-size: 100px;
+    font-size: 60px;
 }
 
 .flyer-info {
@@ -23,8 +23,48 @@ h1 {
     margin: auto;
     background: rgba(0, 128, 0, 0.382);
     font-size: 40px;
-    padding: 10px 60px;
+    padding: 10px 10px;
     border-radius: 5px;
     cursor: pointer;
-    width: 40%
+    width: 40%;
+    text-align: center;
+}
+
+@media screen and (max-width: 1420px) {
+    .flyer-info {
+        font-size: large;
+        padding: 5px;
+    }
+
+    .header-flyer {
+        font-size: 40px;
+    }
+
+    .button-attending {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .header-flyer {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header-flyer {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .button-attending {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .button-attending {
+        font-size: 10px;
+    }
 }
