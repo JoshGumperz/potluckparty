@@ -21,4 +21,5 @@ function Potluck({ updateSubmitted, submitted }) {
   );
 }
 
+
 export default Potluck;
