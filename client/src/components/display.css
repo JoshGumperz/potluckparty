@@ -1,11 +1,11 @@
 .display-table-row {
     position: relative;
+    height: 50px;
 }
 
-.display-table-container {
+.display-table {
     width: 100%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    min-height: 450px;
 }
 
 .display-icon {
@@ -29,4 +29,11 @@
 
 .table>:not(caption)>*>* {
     box-shadow: none;
+}
+
+.display-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
