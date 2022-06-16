@@ -20,9 +20,11 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 app.use('/api', require("./routes/routes"))
 
-app.use(express.static('client/build'));
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-})
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    })
+}
 
 app.listen(PORT, () => { console.log(`Backend server now running on port http://localhost:${PORT}`) })

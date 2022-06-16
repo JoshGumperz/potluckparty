@@ -86,7 +86,7 @@ function Display({ updateSubmitted, submitted }) {
 
   return (
     <div className="display-container">
-      <Table striped bordered hover responsive className='display-table'>
+      <Table striped bordered hover className='display-table'>
         <thead>
           <tr>
             <th>Name</th>

@@ -4,7 +4,13 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 80vh;
 }
+
+/* .potluck-form-container, .potluck-display-container {
+    display: flex;
+    flex-direction: column;
+} */
 
 .potluck-header-container {
     width: 100%;
@@ -27,7 +33,7 @@
     margin-bottom: 0;
 }
 
-@media screen and (max-width: 1420px) {
+@media screen and (max-width: 1475px) {
     .potluck-form-container {
         width: 40%;
     }
@@ -37,7 +43,7 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
     .potluck-form-container {
         width: 45%;
     }
@@ -47,7 +53,7 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1080px) {
     .potluck-form-container {
         width: 50%;
     }
@@ -57,9 +63,15 @@
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 970px) {
     .potluck-container {
         flex-direction: column;
+        margin-top: 2.5em;
+        height: min-content;
+    }
+
+    .potluck-form-container, .potluck-display-container {
+        width: 60%;
     }
 
     .potluck-header-container {

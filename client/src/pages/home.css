@@ -1,70 +1,145 @@
 .flyer-box {
     display: flex;
-    flex-direction: column;
-    width: auto;
-    border: 15px solid green;
-    padding: 50px;
-    margin: 20px;
     justify-content: center;
+    align-items: center;
+    background-image: url(../../public/images/header-img.jpg);
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+}
+
+.flyer-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
 }
 
 .header-flyer {
-    margin: auto;
-    font-size: 60px;
+    color: #fff;
+    font-size: 4rem;
 }
 
 .flyer-info {
-    padding: 50px;
-    margin: 20px;
-    font-size: xx-large;
+    color: #fff;
+    text-align: center;
+    font-size: 3rem;
+    margin: 2em 0 1em 0;
 }
 
 .button-attending {
-    margin: auto;
-    background: rgba(0, 128, 0, 0.382);
-    font-size: 40px;
-    padding: 10px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 40%;
+    border-radius: 3px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
     text-align: center;
+    font-size: 2rem;
+    padding: 16px;
+    width: 240px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.button-attending{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button-attending:after {
+    content: '→';
+    position: absolute;
+    opacity: 0;  
+    top: 16px;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button-attending:hover{
+    padding-right: 24px;
+    padding-left:8px;
+    background-color: rgba(255, 255, 255, 0.306);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.button-attending:hover:after {
+    opacity: 1;
+    right: 10px;
+}
+
+.black-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.553);
 }
 
 @media screen and (max-width: 1420px) {
     .flyer-info {
-        font-size: large;
+        font-size: 2rem;
         padding: 5px;
     }
 
     .header-flyer {
-        font-size: 40px;
+        font-size: 3rem;
     }
 
     .button-attending {
-        font-size: 20px;
+        font-size: 1.5rem;
+        width: 180px;
     }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 920px) {
+    .flyer-info {
+        font-size: 1.5rem;
+    }
+
     .header-flyer {
-        font-size: 30px;
+        font-size: 2rem;
+    }
+
+    .button-attending {
+        font-size: 1.3rem;
+        width: 160px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .flyer-info {
+        font-size: 1.2rem;
+    }
+
+    .header-flyer {
+        font-size: 1.8rem;
+    }
+
+    .button-attending {
+        font-size: 1.2rem;
+        width: 150px;
     }
 }
 
 @media screen and (max-width: 600px) {
+    .flyer-info {
+        font-size: 1rem;
+    }
+
     .header-flyer {
-        font-size: 20px;
+        font-size: 1.5rem;
+    }
+
+    .button-attending {
+        font-size: 1rem;
+        width: 140px;
     }
 }
 
-@media screen and (max-width: 420px) {
-    .button-attending {
-        font-size: 15px;
+@media screen and (max-width: 500px) {
+    .flyer-info {
+        margin-bottom: 0.2em;
     }
 }
 
-@media screen and (max-width: 380px) {
-    .button-attending {
-        font-size: 10px;
-    }
-}

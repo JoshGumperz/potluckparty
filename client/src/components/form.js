@@ -85,7 +85,7 @@ function Form({ updateSubmitted, postOrPut }) {
   return (
     <form onSubmit={handleSubmit} className={"form-container"}>
         <div className='form-header-container'>
-          <h3 className='form-header'>Form</h3>
+          <h3 className='form-header'>{postOrPut === 'post' ? 'Signup' : 'Edit'}</h3>
         </div>
         { invalidInput ? <div className='form-error-message-container'><p className='form-error-message'>Invalid Input. Please Fill Out All The Fields.</p></div> : null }
         <div className='form-label-container'>
@@ -99,6 +99,7 @@ function Form({ updateSubmitted, postOrPut }) {
             name='name'
             value={name}
             required={true}
+            placeholder={'name'}
           ></input>
         </div>
         <div className='form-label-container'>
@@ -112,6 +113,7 @@ function Form({ updateSubmitted, postOrPut }) {
             name='email'
             value={email}
             required={true}
+            placeholder={'email'}
           ></input>
         </div>
         <div className='form-dropdown-container form-label-container'>
@@ -142,6 +144,7 @@ function Form({ updateSubmitted, postOrPut }) {
             name='dish'
             value={dish}
             required={true}
+            placeholder={'dish, drink, or utensils'}
           ></input>
         </div>
         <div className='form-button-container'>

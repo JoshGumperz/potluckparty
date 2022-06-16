@@ -11,9 +11,11 @@ function Potluck({ updateSubmitted, submitted }) {
       </div>
       <div className='potluck-container'>
         <div className='potluck-form-container'>
+          <h4 className='potluck-form-header'>Signup Form</h4>
           <Form updateSubmitted={updateSubmitted} postOrPut={'post'} />
         </div>
         <div className='potluck-display-container'>
+          <h4 className='potluck-display-header'>Current Attendees</h4>
           <Display updateSubmitted={updateSubmitted} submitted={submitted} />
         </div>
       </div>
