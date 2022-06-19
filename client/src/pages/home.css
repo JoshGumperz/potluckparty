@@ -19,6 +19,7 @@
 .header-flyer {
     color: #fff;
     font-size: 4rem;
+    text-align: center;
 }
 
 .flyer-info {
@@ -124,6 +125,15 @@
 }
 
 @media screen and (max-width: 500px) {
+    .header-flyer {
+        font-size: 1.5rem;
+    }
+
+    .button-attending {
+        font-size: 1.2rem;
+        width: 145px;
+    }
+
     .flyer-info {
         margin-bottom: 0.5em;
     }
