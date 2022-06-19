@@ -4,7 +4,7 @@ const User = require('../models/user');
 
 router.get('/', async (req, res) => {
   try {
-    const users = await User.find();
+    const users = await User.find().sort( [['updatedAt', -1]] );
     res.status(200).json(users);
   } catch (error) {
     console.log(error);
