@@ -24,7 +24,7 @@
 .flyer-info {
     color: #fff;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin: 2em 0 1em 0;
 }
 
@@ -34,9 +34,9 @@
     border: none;
     color: #fff;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding: 16px;
-    width: 240px;
+    width: 290px;
     transition: all 0.5s;
     cursor: pointer;
 }
@@ -87,8 +87,8 @@
     }
 
     .button-attending {
-        font-size: 1.5rem;
-        width: 180px;
+        font-size: 2rem;
+        width: 230px;
     }
 }
 
@@ -98,12 +98,7 @@
     }
 
     .header-flyer {
-        font-size: 2rem;
-    }
-
-    .button-attending {
-        font-size: 1.3rem;
-        width: 160px;
+        font-size: 2.5rem;
     }
 }
 
@@ -113,27 +108,18 @@
     }
 
     .header-flyer {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .button-attending {
-        font-size: 1.2rem;
-        width: 150px;
+        font-size: 1.5rem;
+        width: 190px;
     }
 }
 
 @media screen and (max-width: 600px) {
     .flyer-info {
         font-size: 1rem;
-    }
-
-    .header-flyer {
-        font-size: 1.5rem;
-    }
-
-    .button-attending {
-        font-size: 1rem;
-        width: 140px;
     }
 }
 
